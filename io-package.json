@@ -1,0 +1,79 @@
+{
+    "common": {
+        "name": "knmi-weather",
+        "version": "0.1.0",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "KNMI-Weather",
+        "titleLang": {
+            "en": "KNMI-Weather",
+            "de": "KNMI-Weather",
+            "ru": "KNMI-Weather",
+            "pt": "KNMI-Weather",
+            "nl": "KNMI-Weather",
+            "fr": "KNMI-Weather",
+            "it": "KNMI-Weather",
+            "es": "KNMI-Weather",
+            "pl": "KNMI-Weather",
+            "zh-cn": "KNMI-Weather"
+        },
+        "desc": {
+            "en": "Current weather data from the KNMI (Netherlands)",
+            "de": "Das aktuelle Wetter Daten von der KNMI (Niederlande)",
+            "ru": "Текущие погодные данные из КНМИ (Нидерланды)",
+            "pt": "Dados do tempo actual do KNMI (países baixos)",
+            "nl": "De actuele weergegevens van het KNMI (Nederland)",
+            "fr": "Données météo actuelles à partir du KNMI (pays-bas)",
+            "it": "Dati meteo dalle KNMI (paesi Bassi)",
+            "es": "Actual de los datos meteorológicos de la KNMI (países Bajos)",
+            "pl": "Aktualne dane pogodowe z KNMI (Holandia)",
+            "zh-cn": "当前的气象数据的反演(荷兰)"
+        },
+        "authors": [
+            "DutchmanNL <rdrozda@hotmail.com>"
+        ],
+        "keywords": [
+            "Weather",
+            "Alarm",
+            "Netherlands"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "knmi-weather.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/iobroker-community-adapters/ioBroker.knmi-weather/master/admin/knmi-weather.png",
+        "readme": "https://github.com/iobroker-community-adapters/ioBroker.knmi-weather/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "schedule",
+        "schedule": "*/5 * * * *",
+        "type": "weather",
+        "compact": true,
+        "materialize": true,
+        "dependencies": [
+            {
+                "admin": ">=3.0.0"
+            },
+            {
+                "js-controller": ">=1.4.2"
+            }
+        ]
+    },
+    "native": {
+        "API-Key": ""
+    },
+    "objects": [],
+    "instanceObjects": []
+}
