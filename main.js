@@ -69,6 +69,8 @@ class KnmiWeather extends utils.Adapter {
 			}
 		});
 
+		this.doRainradar();
+
 		// force terminate after 1min
 		// don't know why it does not terminate by itself...
 		setTimeout(() => {
@@ -141,6 +143,67 @@ class KnmiWeather extends utils.Adapter {
 		});
 
 		await this.setStateAsync(test[statename]["prefix"] + statename, {val : value, ack : true});
+
+	}
+
+	async doRainradar(){
+		const sys_conf = await this.getForeignObjectAsync("system.config");
+		if (!sys_conf) return;
+		const lat = sys_conf.common.latitude;
+		const long = sys_conf.common.longitude;
+
+		this.doRainStates("rainradar.Current.City_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=1&voor=0", "120x220px");
+		this.doRainStates("rainradar.Current.City_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=2&voor=0", "256x256px");
+		this.doRainStates("rainradar.Current.City_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=2b&voor=0", "330x330px");
+		this.doRainStates("rainradar.Current.City_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=3&voor=0", "550x512px");
+		this.doRainStates("rainradar.Current.Region_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=1&voor=0", "120x220px");
+		this.doRainStates("rainradar.Current.Region_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=2&voor=0", "256x256px");
+		this.doRainStates("rainradar.Current.Region_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=2b&voor=0", "330x330px");
+		this.doRainStates("rainradar.Current.Region_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=3&voor=0", "550x512px");
+		this.doRainStates("rainradar.Current.Province_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=1&voor=0", "120x220px");
+		this.doRainStates("rainradar.Current.Province_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=2&voor=0", "256x256px");
+		this.doRainStates("rainradar.Current.Province_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=2b&voor=0", "330x330px");
+		this.doRainStates("rainradar.Current.Province_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=3&voor=0", "550x512px");
+		this.doRainStates("rainradar.Current.Country_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=1&voor=0", "120x220px");
+		this.doRainStates("rainradar.Current.Country_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=2&voor=0", "256x256px");
+		this.doRainStates("rainradar.Current.Country_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=2b&voor=0", "330x330px");
+		this.doRainStates("rainradar.Current.Country_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=3&voor=0", "550x512px");
+		this.doRainStates("rainradar.Forecast_3h.City_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=1&voor=1", "120x220px");
+		this.doRainStates("rainradar.Forecast_3h.City_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=2&voor=1", "256x256px");
+		this.doRainStates("rainradar.Forecast_3h.City_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=2b&voor=1", "330x330px");
+		this.doRainStates("rainradar.Forecast_3h.City_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=13&size=3&voor=1", "550x512px");
+		this.doRainStates("rainradar.Forecast_3h.Region_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=1&voor=1", "120x220px");
+		this.doRainStates("rainradar.Forecast_3h.Region_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=2&voor=1", "256x256px");
+		this.doRainStates("rainradar.Forecast_3h.Region_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=2b&voor=1", "330x330px");
+		this.doRainStates("rainradar.Forecast_3h.Region_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=11&size=3&voor=1", "550x512px");
+		this.doRainStates("rainradar.Forecast_3h.Province_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=1&voor=1", "120x220px");
+		this.doRainStates("rainradar.Forecast_3h.Province_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=2&voor=1", "256x256px");
+		this.doRainStates("rainradar.Forecast_3h.Province_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=2b&voor=1", "330x330px");
+		this.doRainStates("rainradar.Forecast_3h.Province_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=8&size=3&voor=1", "550x512px");
+		this.doRainStates("rainradar.Forecast_3h.Country_small", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=1&voor=1", "120x220px");
+		this.doRainStates("rainradar.Forecast_3h.Country_medium", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=2&voor=1", "256x256px");
+		this.doRainStates("rainradar.Forecast_3h.Country_tall", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=2b&voor=1", "330x330px");
+		this.doRainStates("rainradar.Forecast_3h.Country_huge", "https://gadgets.buienradar.nl/gadget/zoommap/?lat=" + lat + "&lng=" + long + "&overname=2&zoom=6&size=3&voor=1", "550x512px");
+	}
+
+	// Function to handle state creation
+	async doRainStates(device, value, name){	
+	
+		// Create objects
+		await this.setObjectNotExistsAsync(device, {
+			type: "state",
+			common: {
+				name: name,
+				type: "string",
+				role: "weather.radar.rain",
+				read: true,
+				write: false,
+			},
+			native: {},
+		});
+
+		// Store links
+		await this.setState(device, {val : value, ack : true});
 
 	}
 
