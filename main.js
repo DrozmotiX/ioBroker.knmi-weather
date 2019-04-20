@@ -37,26 +37,33 @@ class KnmiWeather extends utils.Adapter {
 		const sys_conf = await this.getForeignObjectAsync("system.config");
 		if (!sys_conf) return;
 
+		this.log.debug(JSON.stringify(sys_conf));
+
 		const requestUrl = "http://weerlive.nl/api/json-data-10min.php?key=" + this.config["API-Key"] + "&locatie=" + sys_conf.common.latitude + "," + sys_conf.common.longitude;
 		http_request(requestUrl, (error, response, body) => {
 	
 			if (!error && response.statusCode === 200) {
 				// we got a response
-				this.log.info(body);
-				const data = JSON.parse(body);
-				// Test-Data
-				// const data = JSON.parse('{ "liveweer": [{"plaats": "Amsterdam", "temp": "13.4", "gtemp": "13.4", "samenv": "Geheel bewolkt", "lv": "79", "windr": "Oost", "windms": "1", "winds": "1", "windk": "1.9", "windkmh": "3.6", "luchtd": "1022.9", "ldmmhg": "767", "dauwp": "9", "zicht": "18", "verw": "Wolkenvelden en een enkele lichte bui. Morgen overal zonnig en droog", "sup": "06:36", "sunder": "20:44", "image": "wolkennacht", "d0weer": "halfbewolkt", "d0tmax": "22", "d0tmin": "9", "d0windk": "3", "d0windknp": "10", "d0windms": "5", "d0windkmh": "19", "d0windr": "O", "d0neerslag": "0", "d0zon": "75", "d1weer": "zonnig", "d1tmax": "21", "d1tmin": "8", "d1windk": "3", "d1windknp": "8", "d1windms": "4", "d1windkmh": "15", "d1windr": "O", "d1neerslag": "0", "d1zon": "90", "d2weer": "zonnig", "d2tmax": "21", "d2tmin": "9", "d2windk": "2", "d2windknp": "6", "d2windms": "3", "d2windkmh": "11", "d2windr": "O", "d2neerslag": "10", "d2zon": "80", "alarm": "0"}]}');
-				for (const key in data) {
-					const arr = data[key];
-					for( let i = 0; i < arr.length; i++ ) {
-						const obj = arr[ i ];
-						for (const prop in obj) {
-							if(obj.hasOwnProperty(prop)){
-								this.doStatehandling(prop, obj[prop]);
+				this.log.debug(body);
+
+				try {
+					const data = JSON.parse(body);
+					// Test-Data
+					// const data = JSON.parse('{ "liveweer": [{"plaats": "Amsterdam", "temp": "13.4", "gtemp": "13.4", "samenv": "Geheel bewolkt", "lv": "79", "windr": "Oost", "windms": "1", "winds": "1", "windk": "1.9", "windkmh": "3.6", "luchtd": "1022.9", "ldmmhg": "767", "dauwp": "9", "zicht": "18", "verw": "Wolkenvelden en een enkele lichte bui. Morgen overal zonnig en droog", "sup": "06:36", "sunder": "20:44", "image": "wolkennacht", "d0weer": "halfbewolkt", "d0tmax": "22", "d0tmin": "9", "d0windk": "3", "d0windknp": "10", "d0windms": "5", "d0windkmh": "19", "d0windr": "O", "d0neerslag": "0", "d0zon": "75", "d1weer": "zonnig", "d1tmax": "21", "d1tmin": "8", "d1windk": "3", "d1windknp": "8", "d1windms": "4", "d1windkmh": "15", "d1windr": "O", "d1neerslag": "0", "d1zon": "90", "d2weer": "zonnig", "d2tmax": "21", "d2tmin": "9", "d2windk": "2", "d2windknp": "6", "d2windms": "3", "d2windkmh": "11", "d2windr": "O", "d2neerslag": "10", "d2zon": "80", "alarm": "0"}]}');
+					for (const key in data) {
+						const arr = data[key];
+						for( let i = 0; i < arr.length; i++ ) {
+							const obj = arr[ i ];
+							for (const prop in obj) {
+								if(obj.hasOwnProperty(prop)){
+									this.doStatehandling(prop, obj[prop]);
+								}
 							}
 						}
-					}
-				}	
+					}	
+				} catch (error) {
+					this.log.error(body);
+				}
 			} else { // error or non-200 status code
 				this.log.error("Connection_Failed, check your API key and coordinate settings in Admin configuration !");
 			}
@@ -65,9 +72,9 @@ class KnmiWeather extends utils.Adapter {
 		// force terminate after 1min
 		// don't know why it does not terminate by itself...
 		setTimeout(() => {
-			this.log.warn("force terminate");
+			this.log.warn(this.name + " force terminate");
 			this.terminate ? this.terminate() : process.exit();
-		}, 60000);
+		}, 50000);
 		
 	}
 
@@ -143,7 +150,7 @@ class KnmiWeather extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			this.log.info( this.name + " stopped, cleaned everything up...");
+			this.log.info(this.name + " stopped, cleaned everything up...");
 			callback();
 		} catch (e) {
 			callback();
