@@ -1,7 +1,5 @@
-<h1>
-	<img src="admin/knmi-weather.png" width="64"/>
-	ioBroker.knmi-weather
-</h1>
+![Logo](admin/knmi-weather.png)
+# ioBroker.knmi-weather
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.knmi-weather.svg)](https://www.npmjs.com/package/iobroker.knmi-weather)
 [![Downloads](https://img.shields.io/npm/dm/iobroker.knmi-weather.svg)](https://www.npmjs.com/package/iobroker.knmi-weather)
