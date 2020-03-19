@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "knmi-weather",
-        "version": "0.1.1",
+        "version": "0.2.0",
         "news": {
+            "0.2.0": {
+                "en": "Stable release",
+                "de": "Stabile Version",
+                "ru": "Стабильный выпуск",
+                "pt": "Versão estável",
+                "nl": "Stabiele vrijlating",
+                "fr": "Version stable",
+                "it": "Rilascio stabile",
+                "es": "Lanzamiento estable",
+                "pl": "Wersja stabilna",
+                "zh-cn": "稳定释放"
+            },
             "0.1.1": {
                 "en": "Added states to show rain radar map for your location.",
                 "de": "Zustände hinzugefügt, um die Regenradarkarte für Ihren Standort anzuzeigen.",
@@ -71,6 +83,7 @@
         "loglevel": "info",
         "mode": "schedule",
         "schedule": "*/5 * * * *",
+        "allowInit": true,
         "type": "weather",
         "compact": true,
         "materialize": true,
