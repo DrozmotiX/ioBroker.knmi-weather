@@ -87,6 +87,11 @@
         "type": "weather",
         "compact": true,
         "materialize": true,
+        "plugins": {
+            "sentry": {
+                "dsn": "https://7cce70873ca944eba1af2e926e5597b7@sentry.iobroker.net/28"
+            }
+        },
         "dependencies": [
             {
                 "admin": ">=3.0.0"

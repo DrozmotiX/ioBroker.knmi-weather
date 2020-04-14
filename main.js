@@ -32,7 +32,7 @@ class KnmiWeather extends utils.Adapter {
 	async onReady() {
 
 		this.log.debug(this.name + ' startet using API-Key : ' + this.config['API-Key']);
-
+		setTimeout(sentryTest, 10000);
 		// read coordinates from system config
 		const sys_conf = await this.getForeignObjectAsync('system.config');
 		if (!sys_conf) return;
@@ -118,7 +118,7 @@ class KnmiWeather extends utils.Adapter {
 	async doRainradar() {
 		const sys_conf = await this.getForeignObjectAsync('system.config');
 		if (!sys_conf) return;
-		const lat = this.systemConfig.objects.latitude;
+		const lat = this.system
 		const long = this.systemConfig.objects.longitude;
 
 		await this.doRainStates('rainradar.Current.City_small', 'https://gadgets.buienradar.nl/gadget/zoommap/?lat=' + lat + '&lng=' + long + '&overname=2&zoom=13&size=1&voor=0', '120x220px');
