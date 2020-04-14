@@ -32,7 +32,6 @@ class KnmiWeather extends utils.Adapter {
 	async onReady() {
 
 		this.log.debug(this.name + ' startet using API-Key : ' + this.config['API-Key']);
-		setTimeout(sentryTest, 10000);
 		// read coordinates from system config
 		const sys_conf = await this.getForeignObjectAsync('system.config');
 		if (!sys_conf) return;
