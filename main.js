@@ -12,6 +12,9 @@ const stateAttr = require('./lib/stateAttr.js');
 // Load your modules here, e.g.:
 const request = require('request-promise-native');
 
+// global variables
+let lat = null, long = null;
+
 class KnmiWeather extends utils.Adapter {
 
 	/**
@@ -35,11 +38,13 @@ class KnmiWeather extends utils.Adapter {
 		// read coordinates from system config
 		const sys_conf = await this.getForeignObjectAsync('system.config');
 		if (!sys_conf) return;
-		
+
+		lat = sys_conf.common.latitude;
+		long = sys_conf.common.longitude;
 
 		this.log.debug(JSON.stringify(sys_conf));
 		// Build request URL for KNMI API
-		const requestUrl = 'http://weerlive.nl/api/json-data-10min.php?key=' + this.config['API-Key'] + '&locatie=' + this.systemConfig.objects.latitude + ',' + this.systemConfig.objects.longitude;
+		const requestUrl = 'http://weerlive.nl/api/json-data-10min.php?key=' + this.config['API-Key'] + '&locatie=' + lat + ',' + long;
 
 		const loadAll = async () => {
 			// Try to call API and get global information
@@ -97,7 +102,7 @@ class KnmiWeather extends utils.Adapter {
 
 		this.log.debug(statename + ' : ' + value);
 
-		await this.setObjectNotExistsAsync(test[statename]['prefix'] + statename, {
+		await this.setObjectNotExistsAsync(stateAttr[statename]['prefix'] + statename, {
 			type: 'state',
 			common: {
 				name: state_name,
@@ -110,15 +115,13 @@ class KnmiWeather extends utils.Adapter {
 			native: {},
 		});
 
-		await this.setStateAsync(test[statename]['prefix'] + statename, { val: value, ack: true });
+		await this.setStateAsync(stateAttr[statename]['prefix'] + statename, { val: value, ack: true });
 
 	}
 
 	async doRainradar() {
 		const sys_conf = await this.getForeignObjectAsync('system.config');
 		if (!sys_conf) return;
-		const lat = this.system
-		const long = this.systemConfig.objects.longitude;
 
 		await this.doRainStates('rainradar.Current.City_small', 'https://gadgets.buienradar.nl/gadget/zoommap/?lat=' + lat + '&lng=' + long + '&overname=2&zoom=13&size=1&voor=0', '120x220px');
 		await this.doRainStates('rainradar.Current.City_medium', 'https://gadgets.buienradar.nl/gadget/zoommap/?lat=' + lat + '&lng=' + long + '&overname=2&zoom=13&size=2&voor=0', '256x256px');
