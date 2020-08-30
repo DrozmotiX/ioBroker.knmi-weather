@@ -41,7 +41,7 @@ If you like my work, please feel free to provide a personal donation
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 0.2.2-beta.0 (2020-08-30)
 * (DutchmanNL) Updated dependency's
 * (DutchmanNL) Bugfixes
 
