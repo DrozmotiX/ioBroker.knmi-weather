@@ -31,6 +31,13 @@ For more information please visit : http://weerlive.nl/index.php
 Get your free API-Key here : http://weerlive.nl/delen.php
 
 ## Changelog
+<!--
+	Placeholder for the next version (at the beginning of the line):
+	### __WORK IN PROGRESS__
+-->
+
+### __WORK IN PROGRESS__
+* (DutchmanNL) 
 
 ### 0.2.1
 * (DutchmanNL) Updated dependencys
