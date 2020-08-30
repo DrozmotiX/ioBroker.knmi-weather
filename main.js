@@ -61,7 +61,7 @@ class KnmiWeather extends utils.Adapter {
 							const obj = arr[i];
 							for (const prop in obj) {
 								if (obj.hasOwnProperty(prop)) {
-									this.doStatehandling(prop, obj[prop]);
+									await this.doStatehandling(prop, obj[prop]);
 								}
 							}
 						}

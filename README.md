@@ -30,6 +30,11 @@ Location data is based on GPS coordinates stored in admin configuration.
 For more information please visit : http://weerlive.nl/index.php  
 Get your free API-Key here : http://weerlive.nl/delen.php
 
+## Support me
+If you like my work, please feel free to provide a personal donation  
+(this is an personal Donate link for DutchmanNL, no relation to the ioBroker Project !)  
+[![Donate](https://raw.githubusercontent.com/iobroker-community-adapters/knmi-weather/master/admin/button.png)](http://paypal.me/DutchmanNL)
+
 ## Changelog
 <!--
 	Placeholder for the next version (at the beginning of the line):
@@ -37,7 +42,8 @@ Get your free API-Key here : http://weerlive.nl/delen.php
 -->
 
 ### __WORK IN PROGRESS__
-* (DutchmanNL) 
+* (DutchmanNL) Updated dependency's
+* (DutchmanNL) Bugfixes
 
 ### 0.2.1
 * (DutchmanNL) Updated dependencys
