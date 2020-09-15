@@ -45,6 +45,10 @@ class KnmiWeather extends utils.Adapter {
 		this.log.debug(JSON.stringify(sys_conf));
 		// Build request URL for KNMI API
 		const requestUrl = 'http://weerlive.nl/api/json-data-10min.php?key=' + this.config['API-Key'] + '&locatie=' + lat + ',' + long;
+		if (!this.config['API-Key']){
+			this.log.error('Please enter a valid API-Key in adapter settings!');
+
+		} else {
 
 		const loadAll = async () => {
 			// Try to call API and get global information
@@ -83,7 +87,7 @@ class KnmiWeather extends utils.Adapter {
 		} catch (e) {
 			this.log.error('Unable to reach KNMI API : ' + e);
 		}
-
+		}
 		// Always terminate at the end
 		this.terminate ? this.terminate() : process.exit();
 
