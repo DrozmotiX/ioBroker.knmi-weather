@@ -1,6 +1,6 @@
 {
   "name": "iobroker.knmi-weather",
-  "version": "0.2.2-beta.0",
+  "version": "1.0.0",
   "description": "Current weather data from the KNMI (Netherlands)",
   "author": {
     "name": "DutchmanNL",

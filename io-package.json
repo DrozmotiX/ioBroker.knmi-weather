@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "knmi-weather",
-        "version": "0.2.2-beta.0",
+        "version": "1.0.0",
         "news": {
+            "1.0.0": {
+                "en": "Final version release\nBugfixes",
+                "de": "Endgültige Version\nFehlerbehebung",
+                "ru": "Выпуск финальной версии\nИсправление ошибок",
+                "pt": "Lançamento da versão final\nCorreções de bugs",
+                "nl": "Release van de definitieve versie\nBugfixes",
+                "fr": "Sortie de la version finale\nCorrections de bugs",
+                "it": "Rilascio della versione finale\nCorrezioni di bug",
+                "es": "Lanzamiento de la versión final\nCorrección de errores",
+                "pl": "Wydanie ostatecznej wersji\nBugfixes",
+                "zh-cn": "最终版本发布\nBug修复"
+            },
             "0.2.2-beta.0": {
                 "en": "Updated dependency's\nBugfixes",
                 "de": "Aktualisierte Abhängigkeiten\nFehlerbehebung",
