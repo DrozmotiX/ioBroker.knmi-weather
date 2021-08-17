@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "knmi-weather",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "news": {
+            "1.0.1": {
+                "en": "Add support for windrgr\nMinor fixes & dependency updates",
+                "de": "Unterstützung für windrgr . hinzufügen\nKleinere Korrekturen und Abhängigkeitsupdates",
+                "ru": "Добавить поддержку windrgr\nМелкие исправления и обновления зависимостей",
+                "pt": "Adicionar suporte para windrgr\nPequenas correções e atualizações de dependências",
+                "nl": "Ondersteuning toevoegen voor windrgr\nKleine fixes en afhankelijkheidsupdates",
+                "fr": "Ajout de la prise en charge de windrgr\nCorrections mineures et mises à jour des dépendances",
+                "it": "Aggiungi il supporto per windrgr\nCorrezioni minori e aggiornamenti delle dipendenze",
+                "es": "Agregar soporte para windrgr\nCorrecciones menores y actualizaciones de dependencia",
+                "pl": "Dodaj wsparcie dla windrgr\nDrobne poprawki i aktualizacje zależności",
+                "zh-cn": "添加对windrgr的支持\n小修复和依赖更新"
+            },
             "1.0.0": {
                 "en": "Final version release\nBugfixes",
                 "de": "Endgültige Version\nFehlerbehebung",
