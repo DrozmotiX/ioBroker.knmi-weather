@@ -50,43 +50,43 @@ class KnmiWeather extends utils.Adapter {
 
 		} else {
 
-		const loadAll = async () => {
+			const loadAll = async () => {
 			// Try to call API and get global information
-			try {
-				const result = await request(requestUrl);
-				this.log.debug('Data from KNMI API received : ' + result);
-				const values = JSON.parse(result);
 				try {
+					const result = await request(requestUrl);
+					this.log.debug('Data from KNMI API received : ' + result);
+					const values = JSON.parse(result);
+					try {
 					// Test-Data
 					// const data = JSON.parse('{ 'liveweer': [{'plaats': 'Amsterdam', 'temp': '13.4', 'gtemp': '13.4', 'samenv': 'Geheel bewolkt', 'lv': '79', 'windr': 'Oost', 'windms': '1', 'winds': '1', 'windk': '1.9', 'windkmh': '3.6', 'luchtd': '1022.9', 'ldmmhg': '767', 'dauwp': '9', 'zicht': '18', 'verw': 'Wolkenvelden en een enkele lichte bui. Morgen overal zonnig en droog', 'sup': '06:36', 'sunder': '20:44', 'image': 'wolkennacht', 'd0weer': 'halfbewolkt', 'd0tmax': '22', 'd0tmin': '9', 'd0windk': '3', 'd0windknp': '10', 'd0windms': '5', 'd0windkmh': '19', 'd0windr': 'O', 'd0neerslag': '0', 'd0zon': '75', 'd1weer': 'zonnig', 'd1tmax': '21', 'd1tmin': '8', 'd1windk': '3', 'd1windknp': '8', 'd1windms': '4', 'd1windkmh': '15', 'd1windr': 'O', 'd1neerslag': '0', 'd1zon': '90', 'd2weer': 'zonnig', 'd2tmax': '21', 'd2tmin': '9', 'd2windk': '2', 'd2windknp': '6', 'd2windms': '3', 'd2windkmh': '11', 'd2windr': 'O', 'd2neerslag': '10', 'd2zon': '80', 'alarm': '0'}]}');
-					for (const key in values) {
-						const arr = values[key];
-						for (let i = 0; i < arr.length; i++) {
-							const obj = arr[i];
-							for (const prop in obj) {
-								if (obj.hasOwnProperty(prop)) {
-									await this.doStatehandling(prop, obj[prop]);
+						for (const key in values) {
+							const arr = values[key];
+							for (let i = 0; i < arr.length; i++) {
+								const obj = arr[i];
+								for (const prop in obj) {
+									if (obj.hasOwnProperty(prop)) {
+										await this.doStatehandling(prop, obj[prop]);
+									}
 								}
 							}
 						}
+					} catch (error) {
+						this.log.error(error);
 					}
 				} catch (error) {
-					this.log.error(error);
+					this.log.error('Connection Failed, check your API key and coordinate settings in Admin configuration !');
 				}
-			} catch (error) {
-				this.log.error('Connection Failed, check your API key and coordinate settings in Admin configuration !');
+			};
+
+			if (this.config.RainRadar === true) {
+				await this.doRainradar();
 			}
-		};
 
-		if (this.config.RainRadar === true) {
-			await this.doRainradar();
-		}
-
-		try {
-			await loadAll();
-		} catch (e) {
-			this.log.error('Unable to reach KNMI API : ' + e);
-		}
+			try {
+				await loadAll();
+			} catch (e) {
+				this.log.error('Unable to reach KNMI API : ' + e);
+			}
 		}
 		// Always terminate at the end
 		this.terminate ? this.terminate() : process.exit();
@@ -98,21 +98,21 @@ class KnmiWeather extends utils.Adapter {
 		// Try to get details from state lib, if not use defaults. throw warning if states is not known in attribute list
 		if (stateAttr[statename] === undefined) {
 			this.log.warn(`State attribute definition missing for + ${statename}`);
+			return;
 		}
 		const state_name = stateAttr[statename] !== undefined ? stateAttr[statename].name || statename : statename;
 		const role = stateAttr[statename] !== undefined ? stateAttr[statename].role || 'state' : 'state';
-		const type = stateAttr[statename] !== undefined ? stateAttr[statename].type || 'mixed' : 'mixed';
+		const type = typeof (value);
 		const unit = stateAttr[statename] !== undefined ? stateAttr[statename].unit || '' : '';
 
 		this.log.debug(statename + ' : ' + value);
 
-		await this.setObjectNotExistsAsync(stateAttr[statename]['prefix'] + statename, {
+		await this.extendObjectAsync(stateAttr[statename]['prefix'] + statename, {
 			type: 'state',
 			common: {
 				name: state_name,
 				type: type,
 				role: role,
-				read: true,
 				write: false,
 				unit: unit
 			},
