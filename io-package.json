@@ -107,6 +107,8 @@
         "loglevel": "info",
         "mode": "schedule",
         "schedule": "*/5 * * * *",
+        "connectionType": "cloud",
+        "dataSource": "poll",
         "allowInit": true,
         "type": "weather",
         "compact": true,
