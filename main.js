@@ -54,6 +54,10 @@ class KnmiWeather extends utils.Adapter {
 			// Try to call API and get global information
 				try {
 					const result = await request(requestUrl);
+					if (result.includes(`Dagelijkse limiet`)){
+						this.log.warn(result);
+						return; // Cancel operation
+					}
 					this.log.debug('Data from KNMI API received : ' + result);
 					const values = JSON.parse(result);
 					try {

@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "knmi-weather",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "news": {
+            "1.0.2": {
+                "en": "Optimize error message in case API limit is reached",
+                "de": "Optimize-Fehlermeldung bei Erreichen des API-Limits",
+                "ru": "Сообщение об ошибке оптимизации в случае достижения лимита API",
+                "pt": "Otimize a mensagem de erro caso o limite da API seja atingido",
+                "nl": "Optimize-foutbericht in het geval dat de API-limiet is bereikt",
+                "fr": "Optimiser le message d'erreur au cas où la limite de l'API est atteinte",
+                "it": "Ottimizza il messaggio di errore nel caso in cui venga raggiunto il limite dell'API",
+                "es": "Optimice el mensaje de error en caso de que se alcance el límite de API",
+                "pl": "Zoptymalizuj komunikat o błędzie w przypadku osiągnięcia limitu API",
+                "zh-cn": "在达到 API 限制时优化错误消息"
+            },
             "1.0.1": {
                 "en": "Add support for windrgr\nMinor fixes & dependency updates",
                 "de": "Unterstützung für windrgr . hinzufügen\nKleinere Korrekturen und Abhängigkeitsupdates",
