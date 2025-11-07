@@ -129,6 +129,7 @@
         "extIcon": "https://raw.githubusercontent.com/DrozmotiX/ioBroker.knmi-weather/master/admin/knmi-weather.png",
         "readme": "https://github.com/DrozmotiX/ioBroker.knmi-weather/blob/master/README.md",
         "loglevel": "info",
+        "tier": 2,
         "mode": "schedule",
         "schedule": "*/5 * * * *",
         "connectionType": "cloud",
