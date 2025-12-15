@@ -123,7 +123,6 @@
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
-        "main": "main.js",
         "icon": "knmi-weather.png",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/DrozmotiX/ioBroker.knmi-weather/master/admin/knmi-weather.png",
