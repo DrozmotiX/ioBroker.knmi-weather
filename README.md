@@ -38,6 +38,10 @@ If you like my work, please feel free to provide a personal donation
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### **WORK IN PROGRESS**
+- (ioBroker-Bot) Adapter requires js-controller >= 6.0.11 now.
+
 ### 1.0.2 (2021-08-30) - Optimize error message in case API limit is reached
 * (DutchmanNL) Optimize error message in case API limit is reached
 

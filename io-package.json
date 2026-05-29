@@ -1,160 +1,162 @@
 {
-    "common": {
-        "name": "knmi-weather",
-        "version": "1.0.2",
-        "news": {
-            "1.0.2": {
-                "en": "Optimize error message in case API limit is reached",
-                "de": "Optimize-Fehlermeldung bei Erreichen des API-Limits",
-                "ru": "Сообщение об ошибке оптимизации в случае достижения лимита API",
-                "pt": "Otimize a mensagem de erro caso o limite da API seja atingido",
-                "nl": "Optimize-foutbericht in het geval dat de API-limiet is bereikt",
-                "fr": "Optimiser le message d'erreur au cas où la limite de l'API est atteinte",
-                "it": "Ottimizza il messaggio di errore nel caso in cui venga raggiunto il limite dell'API",
-                "es": "Optimice el mensaje de error en caso de que se alcance el límite de API",
-                "pl": "Zoptymalizuj komunikat o błędzie w przypadku osiągnięcia limitu API",
-                "zh-cn": "在达到 API 限制时优化错误消息"
-            },
-            "1.0.1": {
-                "en": "Add support for windrgr\nMinor fixes & dependency updates",
-                "de": "Unterstützung für windrgr . hinzufügen\nKleinere Korrekturen und Abhängigkeitsupdates",
-                "ru": "Добавить поддержку windrgr\nМелкие исправления и обновления зависимостей",
-                "pt": "Adicionar suporte para windrgr\nPequenas correções e atualizações de dependências",
-                "nl": "Ondersteuning toevoegen voor windrgr\nKleine fixes en afhankelijkheidsupdates",
-                "fr": "Ajout de la prise en charge de windrgr\nCorrections mineures et mises à jour des dépendances",
-                "it": "Aggiungi il supporto per windrgr\nCorrezioni minori e aggiornamenti delle dipendenze",
-                "es": "Agregar soporte para windrgr\nCorrecciones menores y actualizaciones de dependencia",
-                "pl": "Dodaj wsparcie dla windrgr\nDrobne poprawki i aktualizacje zależności",
-                "zh-cn": "添加对windrgr的支持\n小修复和依赖更新"
-            },
-            "1.0.0": {
-                "en": "Final version release\nBugfixes",
-                "de": "Endgültige Version\nFehlerbehebung",
-                "ru": "Выпуск финальной версии\nИсправление ошибок",
-                "pt": "Lançamento da versão final\nCorreções de bugs",
-                "nl": "Release van de definitieve versie\nBugfixes",
-                "fr": "Sortie de la version finale\nCorrections de bugs",
-                "it": "Rilascio della versione finale\nCorrezioni di bug",
-                "es": "Lanzamiento de la versión final\nCorrección de errores",
-                "pl": "Wydanie ostatecznej wersji\nBugfixes",
-                "zh-cn": "最终版本发布\nBug修复"
-            },
-            "0.2.2-beta.0": {
-                "en": "Updated dependency's\nBugfixes",
-                "de": "Aktualisierte Abhängigkeiten\nFehlerbehebung",
-                "ru": "Обновленная зависимость\nИсправление ошибок",
-                "pt": "Dependência atualizada\nCorreções de bugs",
-                "nl": "Bijgewerkte afhankelijkheden\nBugfixes",
-                "fr": "Dépendance mise à jour\nCorrections de bugs",
-                "it": "Aggiornamento delle dipendenze\nCorrezioni di bug",
-                "es": "Dependencias actualizadas\nCorrección de errores",
-                "pl": "Zaktualizowano zależności\nBugfixes",
-                "zh-cn": "更新了依赖项\nBug修复"
-            },
-            "0.2.1": {
-                "en": "Stable release",
-                "de": "Stabile Version",
-                "ru": "Стабильный выпуск",
-                "pt": "Versão estável",
-                "nl": "Stabiele vrijlating",
-                "fr": "Version stable",
-                "it": "Rilascio stabile",
-                "es": "Lanzamiento estable",
-                "pl": "Wersja stabilna",
-                "zh-cn": "稳定释放"
-            },
-            "0.1.1": {
-                "en": "Added states to show rain radar map for your location.",
-                "de": "Zustände hinzugefügt, um die Regenradarkarte für Ihren Standort anzuzeigen.",
-                "ru": "Добавлены состояния, чтобы показать карту радарного дождя для вашего местоположения.",
-                "pt": "Adicionado estados para mostrar mapa de radar de chuva para a sua localização.",
-                "nl": "Toevoegingen toegevoegd om de kaart van de regenradar voor uw locatie te tonen.",
-                "fr": "Ajout des états pour afficher la carte radar de pluie pour votre position.",
-                "it": "Aggiunti stati per mostrare la mappa radar della pioggia per la tua posizione.",
-                "es": "Estados agregados para mostrar el mapa del radar de lluvia para su ubicación.",
-                "pl": "Dodano stany, aby pokazać deszczową mapę radarową dla Twojej lokalizacji.",
-                "zh-cn": "添加状态以显示您所在位置的雨雷达地图。"
-            },
-            "0.1.0": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
-            }
-        },
-        "title": "KNMI-Weather",
-        "titleLang": {
-            "en": "KNMI-Weather",
-            "de": "KNMI-Weather",
-            "ru": "KNMI-Weather",
-            "pt": "KNMI-Weather",
-            "nl": "KNMI-Weather",
-            "fr": "KNMI-Weather",
-            "it": "KNMI-Weather",
-            "es": "KNMI-Weather",
-            "pl": "KNMI-Weather",
-            "zh-cn": "KNMI-Weather"
-        },
-        "desc": {
-            "en": "Current weather data from the KNMI (Netherlands)",
-            "de": "Das aktuelle Wetter Daten von der KNMI (Niederlande)",
-            "ru": "Текущие погодные данные из КНМИ (Нидерланды)",
-            "pt": "Dados do tempo actual do KNMI (países baixos)",
-            "nl": "De actuele weergegevens van het KNMI (Nederland)",
-            "fr": "Données météo actuelles à partir du KNMI (pays-bas)",
-            "it": "Dati meteo dalle KNMI (paesi Bassi)",
-            "es": "Actual de los datos meteorológicos de la KNMI (países Bajos)",
-            "pl": "Aktualne dane pogodowe z KNMI (Holandia)",
-            "zh-cn": "当前的气象数据的反演(荷兰)"
-        },
-        "authors": [
-            "DutchmanNL <rdrozda@hotmail.com>"
-        ],
-        "keywords": [
-            "Weather",
-            "Alarm",
-            "Netherlands"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "knmi-weather.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/DrozmotiX/ioBroker.knmi-weather/master/admin/knmi-weather.png",
-        "readme": "https://github.com/DrozmotiX/ioBroker.knmi-weather/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "schedule",
-        "schedule": "*/5 * * * *",
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "allowInit": true,
-        "type": "weather",
-        "compact": true,
-        "materialize": true,
-        "plugins": {
-            "sentry": {
-                "dsn": "https://7cce70873ca944eba1af2e926e5597b7@sentry.iobroker.net/28"
-            }
-        },
-        "dependencies": [
-            {
-                "admin": ">=3.0.0"
-            },
-            {
-                "js-controller": ">=1.4.2"
-            }
-        ]
+  "common": {
+    "name": "knmi-weather",
+    "version": "1.0.2",
+    "news": {
+      "1.0.2": {
+        "en": "Optimize error message in case API limit is reached",
+        "de": "Optimize-Fehlermeldung bei Erreichen des API-Limits",
+        "ru": "Сообщение об ошибке оптимизации в случае достижения лимита API",
+        "pt": "Otimize a mensagem de erro caso o limite da API seja atingido",
+        "nl": "Optimize-foutbericht in het geval dat de API-limiet is bereikt",
+        "fr": "Optimiser le message d'erreur au cas où la limite de l'API est atteinte",
+        "it": "Ottimizza il messaggio di errore nel caso in cui venga raggiunto il limite dell'API",
+        "es": "Optimice el mensaje de error en caso de que se alcance el límite de API",
+        "pl": "Zoptymalizuj komunikat o błędzie w przypadku osiągnięcia limitu API",
+        "zh-cn": "在达到 API 限制时优化错误消息"
+      },
+      "1.0.1": {
+        "en": "Add support for windrgr\nMinor fixes & dependency updates",
+        "de": "Unterstützung für windrgr . hinzufügen\nKleinere Korrekturen und Abhängigkeitsupdates",
+        "ru": "Добавить поддержку windrgr\nМелкие исправления и обновления зависимостей",
+        "pt": "Adicionar suporte para windrgr\nPequenas correções e atualizações de dependências",
+        "nl": "Ondersteuning toevoegen voor windrgr\nKleine fixes en afhankelijkheidsupdates",
+        "fr": "Ajout de la prise en charge de windrgr\nCorrections mineures et mises à jour des dépendances",
+        "it": "Aggiungi il supporto per windrgr\nCorrezioni minori e aggiornamenti delle dipendenze",
+        "es": "Agregar soporte para windrgr\nCorrecciones menores y actualizaciones de dependencia",
+        "pl": "Dodaj wsparcie dla windrgr\nDrobne poprawki i aktualizacje zależności",
+        "zh-cn": "添加对windrgr的支持\n小修复和依赖更新"
+      },
+      "1.0.0": {
+        "en": "Final version release\nBugfixes",
+        "de": "Endgültige Version\nFehlerbehebung",
+        "ru": "Выпуск финальной версии\nИсправление ошибок",
+        "pt": "Lançamento da versão final\nCorreções de bugs",
+        "nl": "Release van de definitieve versie\nBugfixes",
+        "fr": "Sortie de la version finale\nCorrections de bugs",
+        "it": "Rilascio della versione finale\nCorrezioni di bug",
+        "es": "Lanzamiento de la versión final\nCorrección de errores",
+        "pl": "Wydanie ostatecznej wersji\nBugfixes",
+        "zh-cn": "最终版本发布\nBug修复"
+      },
+      "0.2.2-beta.0": {
+        "en": "Updated dependency's\nBugfixes",
+        "de": "Aktualisierte Abhängigkeiten\nFehlerbehebung",
+        "ru": "Обновленная зависимость\nИсправление ошибок",
+        "pt": "Dependência atualizada\nCorreções de bugs",
+        "nl": "Bijgewerkte afhankelijkheden\nBugfixes",
+        "fr": "Dépendance mise à jour\nCorrections de bugs",
+        "it": "Aggiornamento delle dipendenze\nCorrezioni di bug",
+        "es": "Dependencias actualizadas\nCorrección de errores",
+        "pl": "Zaktualizowano zależności\nBugfixes",
+        "zh-cn": "更新了依赖项\nBug修复"
+      },
+      "0.2.1": {
+        "en": "Stable release",
+        "de": "Stabile Version",
+        "ru": "Стабильный выпуск",
+        "pt": "Versão estável",
+        "nl": "Stabiele vrijlating",
+        "fr": "Version stable",
+        "it": "Rilascio stabile",
+        "es": "Lanzamiento estable",
+        "pl": "Wersja stabilna",
+        "zh-cn": "稳定释放"
+      },
+      "0.1.1": {
+        "en": "Added states to show rain radar map for your location.",
+        "de": "Zustände hinzugefügt, um die Regenradarkarte für Ihren Standort anzuzeigen.",
+        "ru": "Добавлены состояния, чтобы показать карту радарного дождя для вашего местоположения.",
+        "pt": "Adicionado estados para mostrar mapa de radar de chuva para a sua localização.",
+        "nl": "Toevoegingen toegevoegd om de kaart van de regenradar voor uw locatie te tonen.",
+        "fr": "Ajout des états pour afficher la carte radar de pluie pour votre position.",
+        "it": "Aggiunti stati per mostrare la mappa radar della pioggia per la tua posizione.",
+        "es": "Estados agregados para mostrar el mapa del radar de lluvia para su ubicación.",
+        "pl": "Dodano stany, aby pokazać deszczową mapę radarową dla Twojej lokalizacji.",
+        "zh-cn": "添加状态以显示您所在位置的雨雷达地图。"
+      },
+      "0.1.0": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版"
+      }
     },
-    "native": {
-        "API-Key": "",
-        "RainRadar": true
+    "title": "KNMI-Weather",
+    "titleLang": {
+      "en": "KNMI-Weather",
+      "de": "KNMI-Weather",
+      "ru": "KNMI-Weather",
+      "pt": "KNMI-Weather",
+      "nl": "KNMI-Weather",
+      "fr": "KNMI-Weather",
+      "it": "KNMI-Weather",
+      "es": "KNMI-Weather",
+      "pl": "KNMI-Weather",
+      "zh-cn": "KNMI-Weather"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "Current weather data from the KNMI (Netherlands)",
+      "de": "Das aktuelle Wetter Daten von der KNMI (Niederlande)",
+      "ru": "Текущие погодные данные из КНМИ (Нидерланды)",
+      "pt": "Dados do tempo actual do KNMI (países baixos)",
+      "nl": "De actuele weergegevens van het KNMI (Nederland)",
+      "fr": "Données météo actuelles à partir du KNMI (pays-bas)",
+      "it": "Dati meteo dalle KNMI (paesi Bassi)",
+      "es": "Actual de los datos meteorológicos de la KNMI (países Bajos)",
+      "pl": "Aktualne dane pogodowe z KNMI (Holandia)",
+      "zh-cn": "当前的气象数据的反演(荷兰)"
+    },
+    "authors": [
+      "DutchmanNL <rdrozda@hotmail.com>"
+    ],
+    "keywords": [
+      "Weather",
+      "Alarm",
+      "Netherlands"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "knmi-weather.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/DrozmotiX/ioBroker.knmi-weather/master/admin/knmi-weather.png",
+    "readme": "https://github.com/DrozmotiX/ioBroker.knmi-weather/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "schedule",
+    "schedule": "*/5 * * * *",
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "allowInit": true,
+    "type": "weather",
+    "compact": true,
+    "plugins": {
+      "sentry": {
+        "dsn": "https://7cce70873ca944eba1af2e926e5597b7@sentry.iobroker.net/28"
+      }
+    },
+    "dependencies": [
+      {
+        "admin": ">=3.0.0"
+      },
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "adminUI": {
+      "config": "materialize"
+    }
+  },
+  "native": {
+    "API-Key": "",
+    "RainRadar": true
+  },
+  "objects": [],
+  "instanceObjects": []
 }
