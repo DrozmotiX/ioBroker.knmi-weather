@@ -13,6 +13,7 @@
                 "it": "Ottimizza il messaggio di errore nel caso in cui venga raggiunto il limite dell'API",
                 "es": "Optimice el mensaje de error en caso de que se alcance el límite de API",
                 "pl": "Zoptymalizuj komunikat o błędzie w przypadku osiągnięcia limitu API",
+                "uk": "Оптимізовано повідомлення про помилку у разі досягнення ліміту API",
                 "zh-cn": "在达到 API 限制时优化错误消息"
             },
             "1.0.1": {
@@ -25,6 +26,7 @@
                 "it": "Aggiungi il supporto per windrgr\nCorrezioni minori e aggiornamenti delle dipendenze",
                 "es": "Agregar soporte para windrgr\nCorrecciones menores y actualizaciones de dependencia",
                 "pl": "Dodaj wsparcie dla windrgr\nDrobne poprawki i aktualizacje zależności",
+                "uk": "Додано підтримку windrgr\nНезначні виправлення та оновлення залежностей",
                 "zh-cn": "添加对windrgr的支持\n小修复和依赖更新"
             },
             "1.0.0": {
@@ -37,6 +39,7 @@
                 "it": "Rilascio della versione finale\nCorrezioni di bug",
                 "es": "Lanzamiento de la versión final\nCorrección de errores",
                 "pl": "Wydanie ostatecznej wersji\nBugfixes",
+                "uk": "Випуск фінальної версії\nВиправлення помилок",
                 "zh-cn": "最终版本发布\nBug修复"
             },
             "0.2.2-beta.0": {
@@ -49,6 +52,7 @@
                 "it": "Aggiornamento delle dipendenze\nCorrezioni di bug",
                 "es": "Dependencias actualizadas\nCorrección de errores",
                 "pl": "Zaktualizowano zależności\nBugfixes",
+                "uk": "Оновлено залежності\nВиправлення помилок",
                 "zh-cn": "更新了依赖项\nBug修复"
             },
             "0.1.1": {
@@ -61,6 +65,7 @@
                 "it": "Aggiunti stati per mostrare la mappa radar della pioggia per la tua posizione.",
                 "es": "Estados agregados para mostrar el mapa del radar de lluvia para su ubicación.",
                 "pl": "Dodano stany, aby pokazać deszczową mapę radarową dla Twojej lokalizacji.",
+                "uk": "Додано стани для відображення карти дощового радара для вашого розташування.",
                 "zh-cn": "添加状态以显示您所在位置的雨雷达地图。"
             },
             "0.1.0": {
@@ -73,6 +78,7 @@
                 "it": "Versione iniziale",
                 "es": "Versión inicial",
                 "pl": "Pierwsze wydanie",
+                "uk": "Початковий випуск",
                 "zh-cn": "首次出版"
             }
         },
@@ -86,6 +92,7 @@
             "it": "KNMI-Weather",
             "es": "KNMI-Weather",
             "pl": "KNMI-Weather",
+            "uk": "KNMI-Weather",
             "zh-cn": "KNMI-Weather"
         },
         "desc": {
@@ -98,6 +105,7 @@
             "it": "Dati meteo dalle KNMI (paesi Bassi)",
             "es": "Actual de los datos meteorológicos de la KNMI (países Bajos)",
             "pl": "Aktualne dane pogodowe z KNMI (Holandia)",
+            "uk": "Поточні дані про погоду від KNMI (Нідерланди)",
             "zh-cn": "当前的气象数据的反演(荷兰)"
         },
         "authors": [
@@ -126,7 +134,9 @@
         "allowInit": true,
         "type": "weather",
         "compact": true,
-        "materialize": true,
+        "adminUI": {
+            "config": "materialize"
+        },
         "plugins": {
             "sentry": {
                 "dsn": "https://7cce70873ca944eba1af2e926e5597b7@sentry.iobroker.net/28"
