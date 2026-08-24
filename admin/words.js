@@ -12,6 +12,7 @@ systemDictionary = {
     it: "La chiave API di KNMI",
     es: "Clave de la API de KNMI",
     pl: "Klucz API z KNMI",
+    uk: "Ключ API від KNMI",
     "zh-cn": "API关键的至今",
   },
   "Create states for rainradar": {
@@ -24,6 +25,7 @@ systemDictionary = {
     it: "Crea oggetti per includere il radar pioggia nella visualizzazione.",
     es: "Crea objetos para incluir el radar de lluvia en tu visualización.",
     pl: "Twórz obiekty, które zawierają radar deszczowy w swojej wizualizacji.",
+    uk: "Створіть об'єкти, щоб включити дощовий радар у вашу візуалізацію.",
     "zh-cn": "创建对象以将雨雷达包含在可视化中。",
   },
   "Click here to request your own API-Key (Limited to 300 requests a day)": {
@@ -36,6 +38,7 @@ systemDictionary = {
     it: "Clicca qui per richiedere una propria API-Key (Limitata a 300 richieste di un giorno)",
     es: "Haga clic aquí para solicitar su propia API-Key (Limitado a 300 solicitudes por día)",
     pl: "Kliknij tutaj, aby zamówić swój własny klucz API (ograniczona do 300 zapytań dziennie)",
+    uk: "Натисніть тут, щоб замовити власний ключ API (обмежено 300 запитами на день)",
     "zh-cn": "按此要求自己的API-Key(限于300请求一天)",
   },
 };
